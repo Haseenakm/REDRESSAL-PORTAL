@@ -1,0 +1,40 @@
+<html>
+    <head>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'gr.css' %}">
+        <script src="{% static 'gr.js' %}"></script>
+    </head>
+   
+    <div class="basic">
+        {% include "header.html" %}
+    </div>
+      <form>
+      
+         <div class="con">
+        
+        
+         <div class="field-set">
+           
+         
+               <input class="form-input" type="text" placeholder="username" required>
+           
+            <br>
+           
+               
+            <input class="form-input" type="text" placeholder="password" required>
+         
+           
+            <br>
+    
+            <button class="log-in"> Register </button>
+         </div>
+        
+   
+       
+      
+        </div>
+        
+       
+      </form>
+</html>
+     

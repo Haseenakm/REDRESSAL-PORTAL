@@ -1,0 +1,40 @@
+<html>
+    <head>
+    {%load static%}
+    <div class="basic">
+        {% include "admin_header.html" %}
+      </div>
+       
+    <link rel="stylesheet" href="{% static 'table.css' %}">
+    </head>
+    <body>
+        <table id="customers">
+            <tr>
+                <th>Name</th>
+               
+                <th>Register Number</th>
+                <th>Address</th>
+                <th>Course</th>
+                <th>Semester</th>
+                <th>#####</th>
+            </tr>
+    {% for ct in items %}
+    <tr>
+        <td>{{ ct.name}}</td>
+
+
+        <td>{{ ct.reg_no}}</td>
+
+        <td>{{ ct.address}}</td>
+        <td>{{ ct.course}}</td>
+        <td>{{ ct.sem}}</td>
+       
+        <td><a href="/parent/{{ ct.id }}">Register</a></td>
+
+
+
+    {% endfor %}
+    </tr>
+        </table>
+    </body>
+</html>

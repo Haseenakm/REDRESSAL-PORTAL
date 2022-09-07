@@ -1,0 +1,45 @@
+<html>
+    <head>
+        {% load static %}
+        <div class="basic">
+            {% include "admin_header.html" %}
+        </div>
+        <link rel="stylesheet" href="{% static 'table.css' %}">
+    </head>
+    
+    <body>
+        <table id="customers">
+            <tr>
+                <th>complaint_id</th>
+                <th>category</th>
+                <th>student_id</th>
+                <th>complaint</th>
+                <th>complaint_dt</th>
+                <th>accused</th>
+                <th>accused_dt</th>
+                <th>remarks</th>
+            
+                
+
+            </tr>
+    {% for ct in ct %}
+    <tr>
+        <td>{{ ct.complaint_id }}</td>
+        <td>{{ ct.category }}</td>
+        <td>{{ ct.student_id }}</td>
+        <td>{{ ct.complaint }}</td>
+        <td>{{ ct.complaint_dt }}</td>
+        <td>{{ ct.accused }}</td>
+        <td>{{ ct.accused_dt }}</td>
+        <td>{{ ct.remarks }}</td>
+        
+        
+        <td><a href="/verify_action1/{{ ct.complaint_id }}">Verify Action</a></td>
+    {% endfor %}
+    </tr>
+        </table>
+    </body>
+   
+      
+</html>
+     

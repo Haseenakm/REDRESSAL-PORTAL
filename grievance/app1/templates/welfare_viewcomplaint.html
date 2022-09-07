@@ -1,0 +1,40 @@
+<html>
+    <head>
+        {% load static %}
+        <div class="basic">
+            {% include "welfare_header.html" %}
+        </div>
+        <link rel="stylesheet" href="{% static 'table.css' %}">
+    </head>
+    
+    <body>
+        <table id="customers">
+            <tr>
+                <th>action_id</th>
+                <th>complaint_id</th>
+                <th>views</th>
+                <th>suggestions</th>
+                <th>actiondetails</th>
+                <th>redirectedTo</th>
+                
+
+            </tr>
+    {% for ct in ct %}
+    <tr>
+        <td>{{ ct.action_id }}</td>
+        <td>{{ ct.complaint_id }}</td>
+        <td>{{ ct.views }}</td>
+        <td>{{ ct.suggestions }}</td>
+        <td>{{ ct.actiondetails }}</td>
+        <td>{{ ct.redirectedTo }}</td>
+        
+        <td><a href="/viewdetails_welfare/{{ ct.complaint_id }}">View Details</a></td>
+       
+    {% endfor %}
+    </tr>
+        </table>
+    </body>
+   
+      
+</html>
+     

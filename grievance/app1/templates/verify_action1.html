@@ -1,0 +1,50 @@
+<html>
+    <head>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'gr.css' %}">
+        <script src="{% static 'gr.js' %}"></script>
+    </head>
+   
+    <div class="basic">
+        {% include "admin_header.html" %}
+    </div>
+      <form action="/verify_action2/" method="POST">
+         {% csrf_token %}
+      
+         <div class="con">
+        
+        
+         <div class="field-set">
+
+        Action id
+        <br>
+        <input type="text" name="action_id" required class="form-input" value="{{ct.action_id}}" placeholder="Action id"><br>
+        complaint_id
+        <br>
+        <input type="text" name="complaint_id" required class="form-input" value="{{ct.complaint_id}}" placeholder="Complaint id"><br>
+        views
+        <br>
+        <input type="text" name="views" required class="form-input" value="{{ct.views}}"><br>
+        Suggestions
+        <br>
+        <input type="text" name="suggestions" required class="form-input" value="{{ct.suggestions}}"><br>
+        Actiondetails
+        <br>
+        <input type="text" name="actiondetails" required class="form-input" value="{{ct.actiondetails}}"><br>
+        Redirected to
+        <br>
+        <input type="text" name="redirectedTo" required class="form-input" value="{{ct.redirectedTo}}"><br>
+        
+        
+        
+        <button class="log-in"> Verify </button>
+      </div>
+     
+
+    
+   
+    </div>
+    
+   
+  </form>
+</html>

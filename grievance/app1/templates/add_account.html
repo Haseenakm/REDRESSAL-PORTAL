@@ -1,0 +1,54 @@
+<html>
+    <head>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'gr.css' %}">
+        <script src="{% static 'gr.js' %}"></script>
+    </head>
+   
+    <div class="basic">
+        {% include "admin_header.html" %}
+    </div>
+      <form action="/add_account1/" method="POST">
+         {% csrf_token %}
+      
+         <div class="con">
+        
+        
+         <div class="field-set">
+               <input type="text" name="account_id" class="form-input" value="{{ff}}" placeholder="account_id"><br>
+           
+            <br>
+         
+               <input class="form-input" type="text" placeholder="name" name="name" required>
+           
+            <br>
+               <select class="form-input"  name="role" required>
+                  <option value="police">police</option>
+                  <option value="counciler">counciler</option>
+                  <option value="welfare">welfare</option>
+
+               </select>
+           
+            <br>
+            
+               <input class="form-input" type="text" placeholder="email" name="email" required>
+           
+            <br>
+               
+               <input class="form-input" type="text" placeholder="phone" name="phone" required>
+         
+           
+            <br>
+    
+            <button class="log-in"> Register </button>
+         </div>
+        
+   
+       
+      
+        </div>
+        
+       
+      </form>
+</html>
+     

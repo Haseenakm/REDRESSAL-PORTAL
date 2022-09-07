@@ -1,0 +1,30 @@
+<html>
+    <head>
+        {% load static %}
+        <div class="basic">
+            {% include "admin_header.html" %}
+        </div>
+        <link rel="stylesheet" href="{% static 'table.css' %}">
+    </head>
+    <body>
+        <table id="customers">
+            <tr>
+                <th>awareness_id</th>
+                <th>awareness_news</th>
+                <th>date</th>
+                <th>#####</th>
+
+            </tr>
+    {% for ct in ct %}
+    <tr>
+        <td>{{ ct.awareness_id }}</td>
+        <td>{{ ct.awareness_news }}</td>
+        <td>{{ ct.date }}</td>
+        <td><a href="/remove_awareness1/{{ ct.id }}">Remove</a></td>
+    {% endfor %}
+    </tr>
+        </table>
+    </body>
+   
+      
+</html>

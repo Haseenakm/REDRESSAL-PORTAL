@@ -1,0 +1,33 @@
+<html>
+    <head>
+        {% load static %}
+        <div class="basic">
+            {% include "admin_header.html" %}
+        </div>
+        <link rel="stylesheet" href="{% static 'table.css' %}">
+    </head>
+    <body>
+        <table id="customers">
+            <tr>
+                <th>Name</th>
+                <th>Role</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>#####</th>
+
+            </tr>
+    {% for ct in ct %}
+    <tr>
+        <td>{{ ct.name }}</td>
+        <td>{{ ct.role }}</td>
+        <td>{{ ct.email }}</td>
+        <td>{{ ct.phone }}</td>
+        <td><a href="/remove_account1/{{ ct.id }}">Remove</a></td>
+    {% endfor %}
+    </tr>
+        </table>
+    </body>
+   
+      
+</html>
+     

@@ -1,0 +1,58 @@
+<html>
+    <head>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'gr.css' %}">
+        <script src="{% static 'gr.js' %}"></script>
+    </head>
+   
+    <div class="basic">
+        {% include "welfare_header.html" %}
+    </div>
+      <form action="/welfare_takeaction/{{ct.complaint_id}}" method="POST">
+         {% csrf_token %}
+      
+         <div class="con">
+        
+        
+         <div class="field-set">
+
+        
+        
+      
+          Complaint_id
+          <br>
+          <input type="text" name="complaint_id" required class="form-input" value="{{ct.complaint_id}}"><br>
+          category
+          <br>
+          <input type="text" name="category" required class="form-input" value="{{ct.category}}"><br>
+          student_id
+          <br>
+          <input type="text" name="student_id" required class="form-input" value="{{ct.student_id}}"><br>
+          Complaint
+          <br>
+          <input type="text" name="complaint" required class="form-input" value="{{ct.complaint}}"><br>
+          Complaint details
+          <br>
+          <input type="text" name="complaint_dt" required class="form-input" value="{{ct.complaint_dt}}"><br>
+          accused
+          <br>
+          <input type="text" name="accused" required class="form-input" value="{{ct.accused}}"><br>
+          accused details
+          <br>
+          <input type="text" name="accused_dt" required class="form-input" value="{{ct.accused_dt}}"><br>
+          Remarks
+          <br>
+          <input type="text" name="remarks" required class="form-input" value="{{ct.remarks}}"><br>
+        
+        
+        <button class="log-in"> Verify </button>
+      </div>
+     
+
+    
+   
+    </div>
+    
+   
+  </form>
+</html>

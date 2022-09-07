@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  {%load static%}
+<head>
+  {% load static %}
+        <link rel="stylesheet" href="{% static 'gr.css' %}">
+        <script src="{% static 'gr.js' %}"></script>
+</head>
+<div class="basic">
+  {% include "public_header.html" %}
+</div>
+<form action="/students/" method="POST">
+  {% csrf_token %}
+
+  <div class="con">
+ 
+ 
+  <div class="field-set">
+  
+        Student id
+        <br>
+        <input type="text" name="student_id" required class="form-input" value="{{ff}}" placeholder="student_id"><br>
+        Register number
+        <br>
+        
+        <input type="text" name="reg_no" required class="form-input" placeholder="Register number"><br>
+        Student Name
+        <br>
+        <input type="text" name="student_name" required class="form-input" placeholder="Student Name"><br>
+        Course
+        <br>
+        <input type="text" name="course" required class="form-input" placeholder="Course"><br>
+        Semester
+        <br>
+        <input type="text" name="semester" required class="form-input" placeholder="Semester"><br>
+        Address
+        <br>
+        <input type="text" name="address" required class="form-input" placeholder="Adress"><br>
+        number
+        <br>
+        <input type="number" name="phone_no" pattern="[6789][0-9]{9}" required class="form-input" placeholder="Phone no"><br>
+        email
+       <br>
+        <input type="email" name="email" required class="form-input" placeholder="Email"><br>
+        
+        <button class="log-in"> Register </button>
+      </div>
+     
+
+    
+   
+     </div>
+     
+    
+   </form>
+</html>

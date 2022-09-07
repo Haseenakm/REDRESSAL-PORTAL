@@ -1,0 +1,44 @@
+<html>
+    <head>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'gr.css' %}">
+        <script src="{% static 'gr.js' %}"></script>
+    </head>
+   
+    <div class="basic">
+        {% include "admin_header.html" %}
+    </div>
+      <form action="/add_awareness1/" method="POST">
+         {% csrf_token %}
+      
+         <div class="con">
+        
+        
+         <div class="field-set">
+               <input class="form-input" name="awareness_id" type="text" placeholder="awareness_id"  value="{{ff}}"required>
+           
+            <br>
+         
+               <input class="form-input" name="awareness_news" type="text" placeholder="awareness_news" name="awareness_news" required>
+           
+            <br>
+            
+            
+               <input class="form-input" name="date" type="date" placeholder="date" name="date" required>
+           
+            <br>
+               
+               
+    
+            <button class="log-in"> Register </button>
+         </div>
+        
+   
+       
+      
+        </div>
+        
+       
+      </form>
+</html>
+     

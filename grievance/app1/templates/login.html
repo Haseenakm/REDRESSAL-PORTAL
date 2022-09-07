@@ -1,0 +1,31 @@
+<html>
+    <head>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'gr.css' %}">
+        <script src="{% static 'gr.js' %}"></script>
+    </head>
+   
+    <div class="basic">
+        {% include "header.html" %}
+    </div>
+      <form action="/logins/" method="post">
+      {% csrf_token %}
+         <div class="con">
+        
+        
+         <div class="field-set">
+           
+         
+               <input name="username" class="form-input" type="text" placeholder="username" required>
+           
+            <br>
+           
+               
+            <input name="password" class="form-input" type="text" placeholder="password" required>
+         
+           
+            <br>
+    
+            <button class="log-in"> Login </button>
+         </div>
+        

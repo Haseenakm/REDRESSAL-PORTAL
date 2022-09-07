@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  {%load static%}
+<head>
+  <link rel="stylesheet" href="{% static 'ss.css' %}">
+</head>
+<body>
+  <div class="basic">
+    {% include "public_header.html" %}
+</div>
+
+<div class="s">
+    <form method="post" action="/parents/">
+        {% csrf_token %}
+        <label>Parent id</label>
+        <input type="text" name="parent_id" value="{{ff}}" readonly="readonly"><br>
+        <label>Student id</label>
+        
+        <input type="text" name="student_id" value="{{data2.student_id}}" readonly="readonly"><br>
+        <label>Register Number</label>
+        <input type="text" name="reg_no" value="{{data2.reg_no}}" readonly="readonly"><br>
+        <label>Parent Name</label>
+        <input type="text" name="parent_name" required><br>
+        <label>Adress</label>
+        <input type="text" name="address" required><br>
+        <label>Phone no</label>
+        <input type="number" name="phone"><br>
+        <label>Email</label>
+        <input type="email" name="email"><br>
+        <input type="submit" value="save">
+
+    </form>
+</div>
+
+</body>
+</html>

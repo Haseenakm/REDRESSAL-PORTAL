@@ -1,0 +1,52 @@
+<html>
+    <head>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'gr.css' %}">
+        <script src="{% static 'gr.js' %}"></script>
+    </head>
+   
+    <div class="basic">
+        {% include "admin_header.html" %}
+    </div>
+      <form action="/parents/" method="POST">
+         {% csrf_token %}
+      
+         <div class="con">
+        
+        
+         <div class="field-set">
+
+        Parent id
+        <br>
+        <input type="text" name="parent_id" required class="form-input" value="{{ff}}" placeholder="Parent id"><br>
+      
+        Student id
+        <br>
+        <input type="text" name="student_id" value="{{data.student_id}}" required class="form-input"><br>
+        Reg no
+        <br>
+        <input type="text" name="reg_no" value="{{data.reg_no}}" required class="form-input"><br>
+        Parent name
+        <br>
+        <input type="text" name="parent_name" required class="form-input" placeholder="Parent Name"><br>
+        Address
+        <br>
+        <input type="text" name="address" required class="form-input" placeholder="Adress"><br>
+        Phone number
+        <br>
+        <input type="number" name="phone_no" required class="form-input" placeholder="Phone no"><br>
+        Email
+        <br>
+        <input type="email" name="email" required class="form-input" placeholder="Email"><br>
+        
+        <button class="log-in"> Register </button>
+      </div>
+     
+
+    
+   
+    </div>
+    
+   
+  </form>
+</html>

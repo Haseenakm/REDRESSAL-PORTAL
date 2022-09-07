@@ -1,0 +1,30 @@
+<html>
+    <head>
+        {% load static %}
+        <div class="basic">
+            {% include "public_header.html" %}
+        </div>
+        <link rel="stylesheet" href="{% static 'table.css' %}">
+    </head>
+    <body>
+        <table id="customers">
+            <tr>
+                <th>notification_id</th>
+                <th>notification</th>
+                <th>date</th>
+                
+
+            </tr>
+    {% for ct in ct %}
+    <tr>
+        <td>{{ ct.notification_id }}</td>
+        <td>{{ ct.notification }}</td>
+        <td>{{ ct.date }}</td>
+        
+    {% endfor %}
+    </tr>
+        </table>
+    </body>
+   
+      
+</html>

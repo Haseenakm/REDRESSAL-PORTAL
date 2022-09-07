@@ -1,0 +1,54 @@
+<html>
+    <head>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'gr.css' %}">
+        <script src="{% static 'gr.js' %}"></script>
+    </head>
+   
+    <div class="basic">
+        {% include "counciler_header.html" %}
+    </div>
+      <form action="/actions/" method="POST">
+         {% csrf_token %}
+      
+         <div class="con">
+        
+        
+         <div class="field-set">
+
+        Action id
+        <br>
+        <input type="text" name="action_id" required class="form-input" value="{{ff}}" placeholder="Action id"><br>
+        Complaint_id
+        <br>
+        <input type="text" name="complaint_id" required class="form-input" value="{{items.complaint_id}}" placeholder="Complaint id"><br>
+        Views
+        <br>
+        <input type="text" name="views" required class="form-input" placeholder="Views"><br>
+        Suggestions
+        <br>
+        <input type="text" name="suggestions" required class="form-input" placeholder="Suggestions"><br>
+        Action details
+        <br>
+        <input type="text" name="actiondetails" required class="form-input" placeholder="Actiondetails"><br>
+        Redirected to
+        <br>
+        <select name="redirectedTo" required class="form-input">
+          <option disabled="true" selected>Redirected To </option>
+          <option value="police">Police </option>
+          <option value="welfare">Welfare</option>
+        </select><br>
+        
+        
+        
+        <button class="log-in"> Register </button>
+      </div>
+     
+
+    
+   
+    </div>
+    
+   
+  </form>
+</html>
